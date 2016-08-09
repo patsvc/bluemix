@@ -1,5 +1,5 @@
 Package.describe({
-  name: 'ibmcloud:bluemix',
+  name: 'patsvc:bluemix',
   version: '1.0.4',
   summary: 'IBM Bluemix OAuth flow',
   git: 'https://github.com/oneibmcloud/bluemix.git',
