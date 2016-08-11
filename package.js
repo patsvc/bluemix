@@ -1,6 +1,6 @@
 Package.describe({
   name: 'patsvc:bluemix',
-  version: '1.0.4',
+  version: '1.0.5',
   summary: 'IBM Bluemix OAuth flow',
   git: 'https://github.com/patsvc/bluemix.git',
   documentation: 'README.md'

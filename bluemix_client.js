@@ -18,6 +18,8 @@ Bluemix.requestCredential = function (options, credentialRequestCompleteCallback
       new ServiceConfiguration.ConfigError());
     return;
   }
+  config.clientId = options.clientId || config.clientId;
+
   var credentialToken = Random.secret();
 
   var scope = (options && options.requestPermissions) || ['openid'];

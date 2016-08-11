@@ -1,7 +1,6 @@
 Bluemix = {};
 
 OAuth.registerService('bluemix', 2, null, function(query) {
-
   var data = getAccessToken(query);
   console.log(data);
   // console.log(JSON.stringify(data, null, 4));
@@ -29,11 +28,13 @@ var userAgent = "Meteor";
 if (Meteor.release)
   userAgent += "/" + Meteor.release;
 
-var getAccessToken = function (query) {
-  var config = ServiceConfiguration.configurations.findOne({service: 'bluemix'});
-  if (!config)
-    throw new ServiceConfiguration.ConfigError();
-   
+ var getAccessToken = function (query) {
+   // get the config
+   var config = ServiceConfiguration.configurations.findOne({service: 'bluemix'});
+   if (!config)
+     throw new ServiceConfiguration.ConfigError();
+  config.clientId = process.env.CLIENT_ID || config.clientId;
+  config.secret = process.env.CLIENT_SECRET || config.secret;
   var basicAuth = 'Basic ' + new Buffer(config.clientId + ':' + config.secret).toString('base64');
   var redirectUri = config.redirectUri || OAuth._redirectUri('bluemix', config);
   var response;

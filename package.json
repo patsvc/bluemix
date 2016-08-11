@@ -1,6 +1,6 @@
 {
   "name": "bluemix",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "IBM Bluemix OAuth flow",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
